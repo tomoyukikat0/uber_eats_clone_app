@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  # --- ここから追加 ---
   namespace :api do
     namespace :v1 do
-      resources :reataurants do
+      resources :restaurants do
         resources :foods, only: %i[index]
       end
       resources :line_foods, only: %i[index create]
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
       resources :orders, only: %i[create]
     end
   end
+  # --- ここまで追加 ---
 end
